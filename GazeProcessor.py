@@ -186,7 +186,7 @@ class GazeProcessor:
                             print(f"Calibration time: {calibration_time:.2f} seconds")
 
                     if self.callback and (left_gaze_vector is not None or right_gaze_vector is not None):
-                        await self.callback(left_gaze_vector, right_gaze_vector, self.video_file)
+                        await self.callback(left_gaze_vector, right_gaze_vector, self.video_file, frame_count)
 
                     if self.vis_options:
                         if self.left_detector.center_detected and self.right_detector.center_detected:

@@ -97,13 +97,12 @@ async def process_video(video_file):
     )
     await gp.start()
 
-async def gaze_vectors_collected(left, right, video_file):
+async def gaze_vectors_collected(left, right, video_file, frame_number):
     """
     Callback function to collect and save gaze vectors
     """
-    timestamp = datetime.now().isoformat()
     data = {
-        "timestamp": timestamp,
+        "frame": frame_number,
         "left_vector": left.tolist() if left is not None else None,
         "right_vector": right.tolist() if right is not None else None
     }
